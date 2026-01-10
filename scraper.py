@@ -74,6 +74,24 @@ BANK_ALIASES = {
     "Jenius": ["Jenius", "Jenius Bank"]
 }
 
+def create_chrome_driver():
+    """Create a Chrome WebDriver with proper configuration for all environments."""
+    chrome_options = Options()
+    chrome_options.add_argument('--headless')
+    chrome_options.add_argument('--disable-gpu')
+    chrome_options.add_argument('--no-sandbox')
+    chrome_options.add_argument('--disable-dev-shm-usage')
+    chrome_options.add_argument(f'user-agent={USER_AGENT}')
+    
+    # Set Chrome binary location for GitHub Actions/Linux environments
+    chrome_binary_path = os.getenv('CHROME_BINARY_PATH', '/usr/bin/google-chrome')
+    if os.path.exists(chrome_binary_path):
+        chrome_options.binary_location = chrome_binary_path
+    elif os.path.exists('/usr/bin/google-chrome-stable'):
+        chrome_options.binary_location = '/usr/bin/google-chrome-stable'
+    
+    return webdriver.Chrome(options=chrome_options)
+
 def extract_rate(text):
     """Extract APY percentage from text."""
     # Look for patterns like "4.35%", "4.35% APY", etc.
@@ -147,7 +165,7 @@ def scrape_ally_page(bank_name, url, driver=None):
         chrome_options.add_argument('--no-sandbox')
         chrome_options.add_argument('--disable-dev-shm-usage')
         chrome_options.add_argument(f'user-agent={USER_AGENT}')
-        driver = webdriver.Chrome(options=chrome_options)
+        driver = create_chrome_driver()
         try:
             driver.get(url)
             wait = WebDriverWait(driver, 10)
@@ -263,7 +281,7 @@ def scrape_sofi_page(bank_name, url, driver=None):
         chrome_options.add_argument('--disable-dev-shm-usage')
         chrome_options.add_argument(f'user-agent={USER_AGENT}')
         
-        driver = webdriver.Chrome(options=chrome_options)
+        driver = create_chrome_driver()
         
         try:
             driver.get(url)
@@ -372,7 +390,7 @@ def scrape_capitalone_page(bank_name, url, driver=None):
         chrome_options.add_argument('--disable-dev-shm-usage')
         chrome_options.add_argument(f'user-agent={USER_AGENT}')
         
-        driver = webdriver.Chrome(options=chrome_options)
+        driver = create_chrome_driver()
         
         try:
             driver.get(url)
@@ -454,7 +472,7 @@ def scrape_marcus_page(bank_name, url, driver=None):
         chrome_options.add_argument('--no-sandbox')
         chrome_options.add_argument('--disable-dev-shm-usage')
         chrome_options.add_argument(f'user-agent={USER_AGENT}')
-        driver = webdriver.Chrome(options=chrome_options)
+        driver = create_chrome_driver()
         try:
             driver.get(url)
             # Wait for the large rate span to appear
@@ -524,7 +542,7 @@ def scrape_barclays_page(bank_name, url):
         chrome_options.add_argument('--disable-dev-shm-usage')
         chrome_options.add_argument(f'user-agent={USER_AGENT}')
         
-        driver = webdriver.Chrome(options=chrome_options)
+        driver = create_chrome_driver()
         
         try:
             driver.get(url)
@@ -616,7 +634,7 @@ def scrape_apple_page(bank_name, url):
         chrome_options.add_argument('--disable-dev-shm-usage')
         chrome_options.add_argument(f'user-agent={USER_AGENT}')
         
-        driver = webdriver.Chrome(options=chrome_options)
+        driver = create_chrome_driver()
         
         try:
             driver.get(url)
@@ -730,7 +748,7 @@ def scrape_amex_page(bank_name, url, driver=None):
         chrome_options.add_argument('--disable-dev-shm-usage')
         chrome_options.add_argument(f'user-agent={USER_AGENT}')
         
-        driver = webdriver.Chrome(options=chrome_options)
+        driver = create_chrome_driver()
         
         try:
             driver.get(url)
@@ -823,7 +841,7 @@ def scrape_wealthfront_page(bank_name, url):
         chrome_options.add_argument('--disable-dev-shm-usage')
         chrome_options.add_argument(f'user-agent={USER_AGENT}')
         
-        driver = webdriver.Chrome(options=chrome_options)
+        driver = create_chrome_driver()
         
         try:
             driver.get(url)
@@ -937,7 +955,7 @@ def scrape_betterment_page(bank_name, url, driver=None):
         chrome_options.add_argument('--disable-dev-shm-usage')
         chrome_options.add_argument(f'user-agent={USER_AGENT}')
         
-        driver = webdriver.Chrome(options=chrome_options)
+        driver = create_chrome_driver()
         
         try:
             driver.get(url)
@@ -1076,7 +1094,7 @@ def scrape_bankrate(scraped_banks):
         chrome_options.add_argument('--no-sandbox')
         chrome_options.add_argument('--disable-dev-shm-usage')
         chrome_options.add_argument(f'user-agent={USER_AGENT}')
-        driver = webdriver.Chrome(options=chrome_options)
+        driver = create_chrome_driver()
         driver.get(AGGREGATE_SOURCES[1])
         
         # Wait for initial cards to load
@@ -1423,21 +1441,7 @@ def run_tracker():
         print(f"\nScraping {len(selenium_banks_to_scrape)} Selenium banks with reused driver...")
         
         # Create one driver for all Selenium banks
-        chrome_options = Options()
-        chrome_options.add_argument('--headless')
-        chrome_options.add_argument('--disable-gpu')
-        chrome_options.add_argument('--no-sandbox')
-        chrome_options.add_argument('--disable-dev-shm-usage')
-        chrome_options.add_argument(f'user-agent={USER_AGENT}')
-        
-        # Set Chrome binary location for GitHub Actions/Linux environments
-        chrome_binary_path = os.getenv('CHROME_BINARY_PATH', '/usr/bin/google-chrome')
-        if os.path.exists(chrome_binary_path):
-            chrome_options.binary_location = chrome_binary_path
-        elif os.path.exists('/usr/bin/google-chrome-stable'):
-            chrome_options.binary_location = '/usr/bin/google-chrome-stable'
-        
-        driver = webdriver.Chrome(options=chrome_options)
+        driver = create_chrome_driver()
         
         try:
             for bank_name, url in selenium_banks_to_scrape.items():
