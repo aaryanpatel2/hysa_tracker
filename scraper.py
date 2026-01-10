@@ -1429,6 +1429,14 @@ def run_tracker():
         chrome_options.add_argument('--no-sandbox')
         chrome_options.add_argument('--disable-dev-shm-usage')
         chrome_options.add_argument(f'user-agent={USER_AGENT}')
+        
+        # Set Chrome binary location for GitHub Actions/Linux environments
+        chrome_binary_path = os.getenv('CHROME_BINARY_PATH', '/usr/bin/google-chrome')
+        if os.path.exists(chrome_binary_path):
+            chrome_options.binary_location = chrome_binary_path
+        elif os.path.exists('/usr/bin/google-chrome-stable'):
+            chrome_options.binary_location = '/usr/bin/google-chrome-stable'
+        
         driver = webdriver.Chrome(options=chrome_options)
         
         try:

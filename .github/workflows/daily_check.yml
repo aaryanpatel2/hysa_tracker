@@ -27,9 +27,6 @@ jobs:
           sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
           sudo apt-get update
           sudo apt-get install -y google-chrome-stable
-          
-          # Create symlink where Selenium expects Chrome
-          sudo ln -sf /usr/bin/google-chrome-stable /usr/bin/google-chrome
 
       - name: Install Python dependencies
         run: |
@@ -42,6 +39,8 @@ jobs:
           # Notification modes: always, smart (default), weekly, monthly, never
           # Configure in: Repository Settings → Secrets and variables → Actions → Variables
           NOTIFICATION_MODE: ${{ vars.NOTIFICATION_MODE || 'smart' }}
+          # Set Chrome binary location for Selenium
+          CHROME_BINARY_PATH: /usr/bin/google-chrome-stable
         run: python scraper.py
 
       - name: Commit and Push changes
