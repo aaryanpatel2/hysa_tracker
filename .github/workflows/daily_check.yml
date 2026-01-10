@@ -1,0 +1,48 @@
+name: Daily HYSA Tracker
+
+on:
+  schedule:
+    - cron: '0 13 * * *' # Runs every day at 1 PM UTC
+  workflow_dispatch:      # Allows manual triggering
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write    # To allow pushing changes
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install Chrome and ChromeDriver
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y wget unzip chromium-browser chromium-chromedriver
+          sudo ln -sf /usr/lib/chromium-browser/chromedriver /usr/local/bin/chromedriver
+
+      - name: Install Python dependencies
+        run: |
+          pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run Tracker
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          # Notification modes: always, smart (default), weekly, monthly, never
+          # Configure in: Repository Settings → Secrets and variables → Actions → Variables
+          NOTIFICATION_MODE: ${{ vars.NOTIFICATION_MODE || 'smart' }}
+        run: python scraper.py
+
+      - name: Commit and Push changes
+        run: |
+          git config --global user.name "GitHub Action"
+          git config --global user.email "action@github.com"
+          git add data/history.json data/last_rates.json data/market_rates_history.json
+          git commit -m "chore: update HYSA data: $(date +'%Y-%m-%d')" || echo "No changes to commit"
+          git push
