@@ -28,7 +28,8 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y google-chrome-stable
           
-          google-chrome --version
+          # Create symlink where Selenium expects Chrome
+          sudo ln -sf /usr/bin/google-chrome-stable /usr/bin/google-chrome
 
       - name: Install Python dependencies
         run: |
