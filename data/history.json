@@ -158,5 +158,17 @@
             "Marcus": 3.65,
             "Amex": 3.3
         }
+    },
+    {
+        "date": "2026-01-13 13:36",
+        "rates": {
+            "Apple": 3.65,
+            "Barclays": 3.85,
+            "Sofi": 3.3,
+            "Capital One": 3.3,
+            "Marcus": 3.65,
+            "Amex": 3.3,
+            "Ally": 3.3
+        }
     }
 ]
