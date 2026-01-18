@@ -110,5 +110,125 @@
             "Amex": 3.3,
             "Betterment": 3.25
         }
+    },
+    {
+        "date": "2026-01-10 00:47",
+        "rates": {
+            "Apple": 3.65,
+            "Barclays": 3.85,
+            "Ally": 3.3,
+            "Sofi": 3.3,
+            "Capital One": 3.3,
+            "Marcus": 3.65,
+            "Amex": 3.3
+        }
+    },
+    {
+        "date": "2026-01-10 13:25",
+        "rates": {
+            "Barclays": 3.85,
+            "Apple": 3.65,
+            "Ally": 3.3,
+            "Sofi": 3.3,
+            "Capital One": 3.3,
+            "Marcus": 3.65,
+            "Amex": 3.3
+        }
+    },
+    {
+        "date": "2026-01-11 13:25",
+        "rates": {
+            "Barclays": 3.85,
+            "Apple": 3.65,
+            "Ally": 3.3,
+            "Sofi": 3.3,
+            "Capital One": 3.3,
+            "Marcus": 3.65,
+            "Amex": 3.3
+        }
+    },
+    {
+        "date": "2026-01-12 13:37",
+        "rates": {
+            "Barclays": 3.85,
+            "Apple": 3.65,
+            "Ally": 3.3,
+            "Sofi": 3.3,
+            "Capital One": 3.3,
+            "Marcus": 3.65,
+            "Amex": 3.3
+        }
+    },
+    {
+        "date": "2026-01-13 13:36",
+        "rates": {
+            "Apple": 3.65,
+            "Barclays": 3.85,
+            "Sofi": 3.3,
+            "Capital One": 3.3,
+            "Marcus": 3.65,
+            "Amex": 3.3,
+            "Ally": 3.3
+        }
+    },
+    {
+        "date": "2026-01-14 13:35",
+        "rates": {
+            "Apple": 3.65,
+            "Barclays": 3.85,
+            "Ally": 3.3,
+            "Sofi": 3.3,
+            "Capital One": 3.3,
+            "Marcus": 3.65,
+            "Amex": 3.3
+        }
+    },
+    {
+        "date": "2026-01-15 13:35",
+        "rates": {
+            "Barclays": 3.85,
+            "Apple": 3.65,
+            "Ally": 3.3,
+            "Sofi": 3.3,
+            "Capital One": 3.3,
+            "Marcus": 3.65,
+            "Amex": 3.3
+        }
+    },
+    {
+        "date": "2026-01-16 13:33",
+        "rates": {
+            "Barclays": 3.85,
+            "Apple": 3.65,
+            "Sofi": 3.3,
+            "Capital One": 3.3,
+            "Marcus": 3.65,
+            "Amex": 3.3,
+            "Ally": 3.3
+        }
+    },
+    {
+        "date": "2026-01-17 13:24",
+        "rates": {
+            "Barclays": 3.85,
+            "Apple": 3.65,
+            "Ally": 3.3,
+            "Sofi": 3.3,
+            "Capital One": 3.3,
+            "Marcus": 3.65,
+            "Amex": 3.3
+        }
+    },
+    {
+        "date": "2026-01-18 13:24",
+        "rates": {
+            "Barclays": 3.85,
+            "Apple": 3.65,
+            "Ally": 3.3,
+            "Sofi": 3.3,
+            "Capital One": 3.3,
+            "Marcus": 3.65,
+            "Amex": 3.3
+        }
     }
 ]

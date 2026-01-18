@@ -1,11 +1,9 @@
 {
+    "Barclays": 3.85,
+    "Apple": 3.65,
     "Ally": 3.3,
     "Sofi": 3.3,
     "Capital One": 3.3,
     "Marcus": 3.65,
-    "Wealthfront": 3.25,
-    "Barclays": 3.85,
-    "Apple": 3.65,
-    "Amex": 3.3,
-    "Betterment": 3.25
+    "Amex": 3.3
 }
