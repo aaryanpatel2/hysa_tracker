@@ -14,6 +14,7 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+import pytz
 
 dotenv.load_dotenv()
 
@@ -1508,8 +1509,9 @@ def run_tracker():
         print("ERROR: No rates were successfully scraped for main tracked banks!")
         return
     
-    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M")
-    
+    central = pytz.timezone("America/Chicago")
+    central_now = datetime.now(central)
+    timestamp = central_now.strftime("%Y-%m-%d %I:%M %p CT")
     # Save current rates to last_rates.json (main tracked banks only)
     with open(LAST_RATES_FILE, 'w') as f:
         json.dump(main_tracked_rates, f, indent=4)
