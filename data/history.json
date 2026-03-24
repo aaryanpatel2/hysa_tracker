@@ -948,5 +948,16 @@
             "Capital One": 3.2,
             "Marcus": 3.65
         }
+    },
+    {
+        "date": "2026-03-24 09:16 AM CT",
+        "rates": {
+            "Barclays": 3.7,
+            "Apple": 3.65,
+            "Ally": 3.2,
+            "Capital One": 3.2,
+            "Marcus": 3.65,
+            "Amex": 3.2
+        }
     }
 ]
