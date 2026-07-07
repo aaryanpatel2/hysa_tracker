@@ -2048,5 +2048,15 @@
             "Marcus": 3.4,
             "Ally": 3.0
         }
+    },
+    {
+        "date": "2026-07-07 10:41 AM CT",
+        "rates": {
+            "Apple": 3.4,
+            "Barclays": 3.5,
+            "Capital One": 3.0,
+            "Marcus": 3.4,
+            "Ally": 3.0
+        }
     }
 ]
