@@ -19243,5 +19243,28 @@
             "Lone Star Bank": 0.2,
             "Charles Schwab": 0.15
         }
+    },
+    {
+        "date": "2026-09-02 11:58 AM CT",
+        "banks": {
+            "Vibrant Credit Union": 4.4,
+            "Abound Credit Union": 4.25,
+            "Axos Bank": 4.21,
+            "Pibank": 4.1,
+            "CIT Bank": 4.1,
+            "Fitness Bank": 4.05,
+            "Climate First Bank": 4.01,
+            "Peak Bank": 4.01,
+            "TotalBank": 4.01,
+            "CineFi": 4.0,
+            "E*TRADE from Morgan Stanley": 4.0,
+            "Happen Bank": 4.0,
+            "Accordia Bank": 4.0,
+            "First National Bank of America": 4.0,
+            "Valley Direct": 4.0,
+            "Poppy Bank": 4.0,
+            "Badass Bank": 4.0,
+            "OnPath Credit Union": 4.0
+        }
     }
 ]
