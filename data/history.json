@@ -2862,5 +2862,16 @@
             "Barclays": 3.5,
             "Ally": 3.1
         }
+    },
+    {
+        "date": "2026-09-26 11:50 AM CT",
+        "rates": {
+            "Apple": 3.5,
+            "Capital One": 3.1,
+            "Sofi": 4.2,
+            "Marcus": 3.5,
+            "Barclays": 3.5,
+            "Ally": 3.1
+        }
     }
 ]
