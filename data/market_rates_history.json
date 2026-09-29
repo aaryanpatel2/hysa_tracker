@@ -21283,5 +21283,26 @@
             "Lone Star Bank": 0.2,
             "Charles Schwab": 0.15
         }
+    },
+    {
+        "date": "2026-09-29 01:24 PM CT",
+        "banks": {
+            "Vibrant Credit Union": 4.4,
+            "Abound Credit Union": 4.25,
+            "E*TRADE from Morgan Stanley": 4.25,
+            "Pibank": 4.25,
+            "CIT Bank": 4.25,
+            "Axos Bank": 4.21,
+            "Newtek Bank": 4.2,
+            "Happen Bank": 4.2,
+            "Openbank": 4.15,
+            "TIMBR": 4.15,
+            "CNBBankDirect": 4.11,
+            "CFG Bank": 4.05,
+            "Climate First Bank": 4.01,
+            "Vio Bank": 4.01,
+            "Peak Bank": 4.01,
+            "TotalBank": 4.01
+        }
     }
 ]
