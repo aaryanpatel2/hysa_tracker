@@ -21834,5 +21834,35 @@
             "Charles Schwab": 0.15,
             "Primis Bank": 0.1
         }
+    },
+    {
+        "date": "2026-10-09 01:36 PM CT",
+        "banks": {
+            "Axos Bank ONE Savings": 5.0,
+            "Chime": 5.0,
+            "Vibrant Credit Union": 4.4,
+            "Peak Bank": 4.27,
+            "Abound Credit Union": 4.25,
+            "E*TRADE from Morgan Stanley": 4.25,
+            "Pibank": 4.25,
+            "CIT Bank": 4.25,
+            "EverBank": 4.2,
+            "Newtek Bank": 4.2,
+            "Happen Bank": 4.2,
+            "First National Bank of America": 4.2,
+            "TotalBank": 4.17,
+            "Openbank": 4.15,
+            "TIMBR": 4.15,
+            "OnPath Credit Union": 4.15,
+            "CNBBankDirect": 4.11,
+            "Accordia Bank": 4.1,
+            "SFGI Direct": 4.05,
+            "Bread Financial": 4.05,
+            "CFG Bank": 4.05,
+            "Axos Bank, Summit Savings": 4.01,
+            "UFB Direct": 4.01,
+            "Climate First Bank": 4.01,
+            "Vio Bank": 4.01
+        }
     }
 ]
