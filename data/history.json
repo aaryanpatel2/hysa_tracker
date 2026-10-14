@@ -3032,5 +3032,13 @@
             "Capital One": 3.1,
             "Sofi": 4.2
         }
+    },
+    {
+        "date": "2026-10-14 12:41 PM CT",
+        "rates": {
+            "Apple": 3.5,
+            "Capital One": 3.1,
+            "Sofi": 4.2
+        }
     }
 ]
