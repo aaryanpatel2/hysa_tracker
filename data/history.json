@@ -3067,5 +3067,14 @@
             "Capital One": 3.1,
             "Sofi": 4.2
         }
+    },
+    {
+        "date": "2026-10-18 11:14 AM CT",
+        "rates": {
+            "Apple": 3.5,
+            "Barclays": 3.65,
+            "Capital One": 3.1,
+            "Sofi": 4.2
+        }
     }
 ]
