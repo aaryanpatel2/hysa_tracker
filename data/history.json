@@ -3321,5 +3321,13 @@
             "Barclays": 3.65,
             "Capital One": 3.2
         }
+    },
+    {
+        "date": "2026-11-21 01:53 PM CT",
+        "rates": {
+            "Apple": 3.5,
+            "Barclays": 3.65,
+            "Capital One": 3.2
+        }
     }
 ]
